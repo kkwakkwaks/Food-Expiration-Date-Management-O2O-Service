@@ -1,0 +1,21 @@
+{%extends 'practice.html'%}
+{%block content%}
+
+    <title>바코드 등록 페이지</title>
+<body>
+    <br><br><br><br><br><br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8  offset-lg-2">
+            <h3 class="mt-5"> 바코드를 카메라에 보여주세요.</h3>
+            <img src="{{ url_for('fridge.video_feed') }}" width="100%">
+            <h3 class="mt-5"> 바코드를 카메라에 갖다대면 자동으로 인식됩니다.</h3>
+            <a href="{{ url_for('fridge.create') }}" class="btn btn-primary">등록</a>
+                <input type=button value="화면 캡쳐" onclick="{takeSnapshot()}"><br>
+
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+{% endblock %}

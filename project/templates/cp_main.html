@@ -1,0 +1,21 @@
+{%extends 'practice.html'%}
+{%block content%}
+<section id="main" class="hero d-flex align-items-center section-bg">
+  <div class="container">
+    <div class="row justify-content-between gy-5">
+      <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
+        <h3 id="main_text" data-aos="fade-up" class="aos-init aos-animate">2023년 1월 1일부터<br> 유통기한 표기법이<br> 소비기한으로 바뀝니다.<br>
+          <p id="main_text_ex" data-aos="fade-up" data-aos-delay="100" class="aos-init aos-animate">✔ 소비기한 : 표시된 조건에서 보관하면 소비해도 안전에 이상이 없는 기간</p></h3><br>
+        
+        <p id="sub_text" data-aos="fade-up" data-aos-delay="100" class="aos-init aos-animate">- 바코드 촬영으로 간편하게 식재료 등록
+        <p id="sub_text" data-aos="fade-up" data-aos-delay="100" class="aos-init aos-animate">- 유통기한이 짧은 식재료의 유통기한을 관리
+        <p id="sub_text" data-aos="fade-up" data-aos-delay="100" class="aos-init aos-animate">- 키워드 추출을 이용한 레시피 추천
+        </p></p>  
+      </div>
+      <div class="col-lg-5 order-1 order-lg-2 text-center text-lg-start">
+        <img src="{{url_for('static', filename='img/hero-img.png')}}" class="img-fluid aos-init aos-animate" alt="" data-aos="zoom-out" data-aos-delay="300">
+      </div>
+    </div>
+  </div>
+</section>
+  {% endblock %}

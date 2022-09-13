@@ -1,0 +1,91 @@
+{%extends 'practice.html'%}
+{%block content%}
+ <section id="add_ingredient" class="book-a-table">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+  
+      <div class="section-header">
+        <br>
+        <h2>재료추가</h2>
+        <p>재료 <span>추가</span></p>
+      </div>
+  
+      <div class="row g-0">
+        <div class="col-6">
+          <a href="{{ url_for('fridge.index_barcode') }}" class="btn btn-primary">바코드 촬영</a>
+      </div>
+        <div class="col-lg-4 reservation-img aos-init aos-animate" style="background-image: url(static/img/reservation.jpg);" data-aos="zoom-out" data-aos-delay="200"></div>
+  
+        <div class="col-lg-8 d-flex align-items-center reservation-form-bg">
+         
+          <form method="post" role="form" class="php-email-form aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+            {{form.csrf_token }}
+            <!-- 오류표시 -->
+            {% for field, errors in form.errors.items() %}
+            <div class="alert alert-danger" role="alert">
+                <strong>{{ form[field].label }}</strong>: {{ ', '.join(errors) }}
+            </div>
+            {% endfor %}
+            <!-- 오류표시 끝 -->
+        <!-- 오류표시 End -->
+            <div class="row gy-4">
+              <div class="col-lg-4 col-md-6">
+                <input type="text" class="form-control" name="barcode" id="barcode" placeholder="바코드" 
+                value="{{ form.barcode.data or '' }}">
+                <div class="validate"></div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <input type="text" class="form-control" name="product" id="product" placeholder="제품명" 
+                value="{{ form.product.data or '' }}">
+                <div class="validate"></div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <select type="text" class="form-control" name="subclass" id="subclass" placeholder="소분류">
+                <!-- value="{{ form.subclass.data or '' }}"> -->
+                <option style="color:lightgrey" value="none">소분류</option>
+                <option value="김치">김치</option>
+                <option value="닭고기">닭고기</option>
+                <option value="돼지고기">돼지고기</option>
+                <option value="두부">두부</option>
+                <option value="묵">묵</option>
+                <option value="베이컨">베이컨</option>
+                <option value="소시지">소시지</option>
+                <option value="어묵">어묵</option>
+                <option value="우유">우유</option>
+                <option value="육류">육류</option>
+                <option value="치즈">치즈</option>
+                <option value="햄">햄</option>
+                <option value="기타">기타</option>
+               </select>
+                <div class="validate"></div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <input type="number" class="form-control" name="qty" id="qty" placeholder="수량" 
+                value="{{ form.qty.data or '' }}">
+                <div class="validate"></div>
+              </div>
+              <div class="col-lg-4 col-md-6">유통기한/소비기한
+                <input type="date" class="form-control" name="exp_date" id="exp_date" placeholder="유통기한" 
+                value="{{ form.exp_date.data or '' }}">
+                <div class="validate"></div>
+              </div>
+              <div class="col-lg-4 col-md-6">추가한 날짜
+                <input type="date" class="form-control" name="adding_date" id="adding_date" placeholder="추가한 날짜"
+                value="{{ form.adding_date.data or '' }}">
+                <div class="validate"></div>
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
+            </div>
+            <div class="text-center"><button type="submit">선택 완료</button></div>
+          </form>
+        </div><!-- End Reservation Form -->
+  
+      </div>
+  
+    </div>
+  </section>
+  {% endblock %}

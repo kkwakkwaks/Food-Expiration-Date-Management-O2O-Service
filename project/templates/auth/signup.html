@@ -1,0 +1,48 @@
+{% extends 'practice.html' %}
+{% block content %}
+<div class="container my-3">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h5 class="my-3 border-bottom pb-2">회원가입</h5>
+    <form method="post" class="post-form">
+        {{ form.csrf_token }}
+        {% include "form_errors.html" %}
+        <div class="form-group">
+            <label for="username">사용자 이름</label>
+            <input type="text" class="form-control" name="username" id="username" value="{{ form.username.data or '' }}">
+        </div>
+        <div class="form-group">
+            <label for="password1">비밀번호</label>
+            <input type="password" class="form-control" name="password1" id="password1" value="{{ form.password1.data or '' }}">
+        </div>
+        <div class="form-group">
+            <label for="password2">비밀번호 확인</label>
+            <input type="password" class="form-control" name="password2" id="password2" value="{{ form.password2.data or '' }}">
+        </div>
+        <div class="form-group">
+            <label for="email">이메일</label>
+            <input type="text" class="form-control" name="email" id="email" value="{{ form.email.data or '' }}">
+        </div>
+        <div class="form-group">
+            <label for="gender">성별</label>
+            <input type="text" class="form-control" name="gender" id="gender" value="{{ form.gender.data or '' }}">
+        </div>
+        <div class="form-group">
+            <label for="age">연령</label>
+            <input type="number" class="form-control" name="age" id="age" value="{{ form.age.data or '' }}">
+        </div>
+        <div class="form-group">
+            <label for="region">지역</label>
+            <input type="text" class="form-control" name="region" id="region" value="{{ form.region.data or '' }}">
+        </div>
+        <!-- 지역(시 단위로), 성별, 연령 ) (회원가입시간)-->
+        <button type="submit" class="btn btn-primary">생성하기</button>
+    </form>
+    <br>
+    <br>
+</div>
+
+{% endblock %}

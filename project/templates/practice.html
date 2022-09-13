@@ -1,0 +1,232 @@
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>소비기한 언제지</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{url_for('static', filename='img/favicon.png')}}" rel="icon">
+  <link href="{{url_for('static', filename='img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&amp;family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='vendor/aos/aos.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{url_for('static', filename='css/main.css')}}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Yummy - v1.1.0
+  * Template URL: https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center sticked">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="{{ url_for('main.index') }}" class="logo d-flex align-items-center me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="static/img/logo.png" alt=""> -->
+        <h1>소비기한 언제지<span>.</span></h1>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        
+        <ul>
+          <li><a href="{{ url_for('main.index') }}" class="">메인</a></li>
+          <li><a href="{{ url_for('main.main') }}" class="">나의냉장고</a></li>
+          <li><a href="{{ url_for('fridge.recipe') }}" class="">레시피 목록</a></li>
+          <li><a href="{{ url_for('fridge.recipe_recom') }}" class="">레시피 골라보기</a></li>
+          <li><a href="{{ url_for('main.statistics') }}" class="">재미있는 통계</a></li>           
+        </ul>
+      </nav><!-- .navbar -->
+      {% if g.user %}
+      <div class="align-items-right"></div>
+        <a href="{{ url_for('fridge.create') }}" class="btn-book-a-table">냉장고 채우기</a>
+        <a href="{{ url_for('auth.logout') }}" class="btn-book-a-table">{{ g.user.username }} 로그아웃</a>
+
+        <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+        <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      </div>
+      {% else %}
+      <div class="align-items-right"></div>
+      <a href="{{ url_for('fridge.create') }}" class="btn-book-a-table">냉장고 채우기</a>
+      <a href="{{ url_for('auth.login') }}" class="btn-book-a-table">로그인</a>
+      <a href="{{ url_for('auth.signup') }}" class="btn-book-a-table">회원가입</a>
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+    </div>
+    {% endif %}
+  </header><!-- End Header -->
+
+  <!-- ======= 메인 Section ======= -->
+
+  <!-- ======= End 메인 Section ======= -->
+
+  <main id="main">
+
+    <!-- ======= 나의 냉장고 Section ======= -->
+    {%block content%}
+    {%endblock%}
+    <!-- ======= End 나의 냉장고 Section ======= -->
+
+    <!-- ======= 어플을 사용해야되는 이유? Section ======= -->
+   
+    <!-- ======= End 어플을 사용해야되는 이유? Section ======= -->
+<!-- ======= 제품등록 Section ======= -->
+
+<!-- ======= End 제품등록 Section ======= -->
+    <!-- ======= 레시피 Section ======= -->
+   
+    <!-- ======= End 레시피 Section ======= -->
+
+    <!-- ======= 통계 Section ======= -->
+    
+    <!-- ======= End 통계 Section ======= -->
+
+   
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= 맨 아래 바 ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="container">
+      <div class="row gy-3">
+        <div class="col-lg-2 col-md-6 d-flex">
+          <div>
+            <h4>YOONSIK CHOO</h4>
+            <p>
+              Github <br>
+              <a href='https://github.com/ChooYoonSik'>https://github.com/ChooYoonSik</a><br>
+            </p>
+          </div>
+        </div>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <div class="col-lg-2 col-md-6 d-flex">
+          <div>
+            <h4>HYEJI KWAK</h4>
+            <p>
+              Github <br>
+              <a href='https://github.com/kkwakkwaks'>https://github.com/kkwakkwaks</a><br>
+            </p>
+          </div>
+        </div>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <div class="col-lg-2 col-md-6 d-flex">
+          <div>
+            <h4>KIDON LEE</h4>
+            <p>
+              Github <br>
+              <a href='https://github.com/GitPolyMath'>https://github.com/GitPolyMath</a><br>
+            </p>
+          </div>
+        </div>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <div class="col-lg-2 col-md-6 d-flex">
+          <div>
+            <h4>HEESUN PARK</h4>
+            <p>
+              Github <br>
+              <a href='https://github.com/heesunpark1'>https://github.com/heesunpark1</a><br>
+            </p>
+          </div>
+        </div>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <div class="col-lg-2 col-md-6 d-flex">
+          <div>
+            <h4>JOOYEON ROH</h4>
+            <p>
+              Github <br>
+              <a href=https://github.com/jooyeonroh>https://github.com/jooyeonroh</a><br>
+            </p>
+          </div>
+        </div>
+          <!-- <i class="bi bi-telephone icon"></i>
+          <div>
+            <h4>Reservations</h4>
+            <p>
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links d-flex">
+          <i class="bi bi-clock icon"></i>
+          <div>
+            <h4>Opening Hours</h4>
+            <p>
+              <strong>Mon-Sat: 11AM</strong> - 23PM<br>
+              Sunday: Closed
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Follow Us</h4>
+          <div class="social-links d-flex">
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        © Copyright <strong><span>Yummy</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer>
+  <!-- End 맨 아래 바 -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center active"><i class="bi bi-arrow-up-short"></i></a>
+
+
+  <!-- Vendor JS Files -->
+  <script src="{{url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url_for('static', filename='vendor/aos/aos.js')}}"></script>
+  <script src="{{url_for('static', filename='vendor/glightbox/js/glightbox.min.js')}}"></script>
+  <script src="{{url_for('static', filename='vendor/purecounter/purecounter_vanilla.js')}}"></script>
+  <script src="{{url_for('static', filename='vendor/swiper/swiper-bundle.min.js')}}"></script>
+
+
+  <!-- Template Main JS File -->
+  <script src="{{url_for('static', filename='js/main.js')}}"></script>
+
+  <link rel="stylesheet" href="https://uicdn.toast.com/grid/latest/tui-grid.css" />
+  <script src="https://uicdn.toast.com/grid/latest/tui-grid.js"></script>
+  <script src="{{url_for('static', filename='js/grid.js')}}"></script>
+
+  
+  {% block script %}
+  {% endblock %}
+
+</body></html>
