@@ -1,4 +1,4 @@
-# Food-Expiration-Date-Management-O2O-Service
+# <식품 유통기한 관리 O2O 서비스 플랫폼>
 **data**
 - 레시피 : https://kadx.co.kr/product/detail/0c5ec800-4fc2-11eb-8b6e-e776ccea3964
 - 바코드 : 
