@@ -6,8 +6,6 @@ http://www.foodsafetykorea.go.kr/api/openApiInfo.do?menu_grp=MENU_GRP31&menu_no=
 https://www.foodsafetykorea.go.kr/api/openApiInfo.do?menu_grp=MENU_GRP31&menu_no=656&show_cnt=10&start_idx=1&svc_no=I2570&svc_type_cd=API_TYPE06
 
 
-**서비스** : https://aibcp1.herokuapp.com/
-
 ## 팀원 및 역할
 <img width="344" alt="image" src="https://user-images.githubusercontent.com/99347825/204076260-889c5274-51bb-49b3-a3e7-6be1409e3364.png">
 
